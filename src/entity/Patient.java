@@ -17,29 +17,23 @@ public class Patient extends Person{
     }
 
 
-    @Override
-    public String toString() {
-        return "....";
-    }
 
     @Override
     public void inputInfo(){
-
+        super.inputInfo();
     }
 
-    public static void setAuto_id(int auto_id) {
-        Patient.auto_id = auto_id;
-    }
 
     public void setId(int id) {
         Id = id;
     }
 
-    public static int getAuto_id() {
-        return auto_id;
-    }
 
     public int getId() {
         return Id;
+    }
+    @Override
+    public void displayInfo() {
+        System.out.printf("",this.Id, this.getName(), this.getAge(), this.getGender(), this.getBirthday(), this.getAddress(), this.getPhone(), this.getEmail()    );
     }
 }

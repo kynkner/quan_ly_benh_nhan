@@ -49,7 +49,9 @@ public class PatientLogic {
             if(checkExistPatient(patient)){
                 continue;
             }
+            System.out.println("test");
             patient.inputInfo();
+            System.out.println("test_1");
             savePatient(patient);
         }
     }
@@ -72,7 +74,14 @@ public class PatientLogic {
     }
 
     public void showPatinet() {
-
+        if (this.patients.isEmpty()){
+            System.out.println("Danh sach rong");
+            return;
+        }
+        System.out.printf("Ma khach hang", "ho va ten", "tuoi", "ngay sinh");
+        for (Patient patient : this.patients) {
+            patient.displayInfo();
+        }
     }
 
     public int getLasPatientId() {

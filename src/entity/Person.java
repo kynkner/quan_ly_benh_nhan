@@ -3,8 +3,10 @@ package entity;
 import utilities.ScannerUtility;
 import utilities.ValidateInput;
 
+import java.io.Serializable;
 
-public class Person implements InputInfo{
+
+public abstract class Person implements InputInfo, Displayable, Serializable {
     private String name;
     private int age;
     private String gender;
@@ -163,4 +165,7 @@ public class Person implements InputInfo{
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public abstract void displayInfo();
 }
