@@ -8,7 +8,7 @@ public class Patient extends Person implements CSVEntity {
     private int Id;
 
     public Patient() {
-        if (PatientLogic.getInstance().getPatientsList().size() > 0){
+        if (!PatientLogic.getInstance().getPatientsList().isEmpty()){
             auto_id = PatientLogic.getInstance().getLastPatientId() + 1;
         }else {
             auto_id = 1000;
