@@ -1,6 +1,6 @@
 package entity;
 
-import Statica.TypeDoctor;
+import statics.TypeDoctor;
 
 public class Doctor extends Person{
     public static int auto_id = 1000;

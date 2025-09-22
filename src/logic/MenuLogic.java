@@ -48,7 +48,11 @@ public class MenuLogic {
         System.out.println("---------------------Quản lý bệnh nhân--------------------");
         System.out.println("1. Nhập bệnh nhân mới");
         System.out.println("2. In danh sách bệnh nhân");
-        System.out.println("3. ");
+        System.out.println("3. Nhập bác sĩ mới"); // chua lam
+        System.out.println("4. In danh sách các bác sĩ"); // chua lam
+        System.out.println("5. Thêm loại bệnh mới"); // chua lam
+        System.out.println("6. In danh sách các loại bệnh"); // chua lam
+        System.out.println("7. Tạo hồ sơ bệnh án"); // chua lam, LUU Y: ho so benh an lay id di theo benh nhan
     }
 
 

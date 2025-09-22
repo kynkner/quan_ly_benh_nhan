@@ -1,4 +1,4 @@
-package Statica;
+package statics;
 
 public enum TypeDoctor {
     BAC_SI,
