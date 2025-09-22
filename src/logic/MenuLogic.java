@@ -13,7 +13,7 @@ public class MenuLogic {
     private final DoctorLogic doctorLogic = new DoctorLogic();
 
     public void runData() {
-        List<Patient> patients = CSVUtils.getInstance().readDataFromFile(patientLogic.PATIENTS_FILE, line -> new Patient((String) line));
+        List<Patient> patients = CSVUtils.getInstance().readDataFromFile(PatientLogic.PATIENTS_FILE, line -> new Patient((String) line));
         this.patientLogic = PatientLogic.getInstance(patients);
     }
 
