@@ -1,19 +1,19 @@
 package logic;
 
 import entity.Patient;
+import utilities.CSVUtils;
 import utilities.DataUtil;
-import utilities.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class MenuLogic {
-    private PatientLogic patientLogic;
+    private  PatientLogic patientLogic;
+    private final DoctorLogic doctorLogic = new DoctorLogic();
 
     public void runData() {
-        Object patientData = FileUtil.getInstance().readFataFile(PatientLogic.PATIENT_DATA_FILE);
-        List<Patient> patients = DataUtil.isNullOrEmty(patientData) ? new ArrayList<>() : (List<Patient>) patientData;
+        List<Patient> patients = CSVUtils.getInstance().readDataFromFile(patientLogic.PATIENTS_FILE, line -> new Patient((String) line));
         this.patientLogic = PatientLogic.getInstance(patients);
     }
 
@@ -24,6 +24,8 @@ public class MenuLogic {
             switch (choofunstion) {
                 case 1 -> patientLogic.inputPatinet();
                 case 2 -> patientLogic.showPatinet();
+                case 3 -> doctorLogic.inputDoctor();
+                case 4 -> doctorLogic.showDoctor();
             }
         }
     }

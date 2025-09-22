@@ -1,3 +1,4 @@
+import entity.Patient;
 import logic.MenuLogic;
 
 public class Main {

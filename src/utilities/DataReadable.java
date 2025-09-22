@@ -1,5 +1,9 @@
 package utilities;
 
+
+import java.util.List;
+import java.util.function.Function;
+
 public interface DataReadable {
-    Object readFataFile(String fileName);
+    <T> List<T> readDataFromFile(String fileName, Function<String, T> mapper);
 }

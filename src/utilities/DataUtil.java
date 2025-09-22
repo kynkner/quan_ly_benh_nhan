@@ -1,7 +1,7 @@
 package utilities;
 
 public class DataUtil {
-    public static boolean isNullOrEmty(Object obj) {
+    public static boolean isNullOrEmpty(Object obj) {
         return obj == null;
     }
 }

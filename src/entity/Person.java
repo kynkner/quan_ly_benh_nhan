@@ -1,19 +1,37 @@
 package entity;
 
+import utilities.CSVEntity;
 import utilities.ScannerUtility;
 import utilities.ValidateInput;
 
 import java.io.Serializable;
 
 
-public abstract class Person implements InputInfo, Displayable, Serializable {
-    private String name;
-    private int age;
-    private String gender;
-    private String birthday;
-    private String address;
-    private String phone;
-    private String email;
+public abstract class Person implements InputInfo, Displayable{
+    protected String name;
+    protected int age;
+    protected String gender;
+    protected String birthday;
+    protected String address;
+    protected String phone;
+    protected String email;
+
+    @Override
+    public abstract void displayInfo();
+
+    public Person() {
+    }
+
+    public Person(String name, int age, String gender, String birthday, String address, String phone, String email) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
 
 
     @Override
@@ -166,6 +184,5 @@ public abstract class Person implements InputInfo, Displayable, Serializable {
         return email;
     }
 
-    @Override
-    public abstract void displayInfo();
+
 }

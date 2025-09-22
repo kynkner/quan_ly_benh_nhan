@@ -1,8 +1,16 @@
 package entity;
 
-public class Doctor implements InputInfo{
+import Statica.TypeDoctor;
+
+public class Doctor extends Person{
     public static int auto_id = 1000;
-    Person person;
+    int id;
+    TypeDoctor typeDoctor;
+
+    @Override
+    public void displayInfo() {
+
+    }
 
     @Override
     public void inputInfo(){
