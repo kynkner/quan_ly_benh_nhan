@@ -81,7 +81,7 @@ public class PatientLogic {
             System.out.println("Danh sach rong");
             return;
         }
-        System.out.printf("%-5s | %-19s | %-5s | %-9s | %-10s | %-21s | %-10s | %-21s | \n","id", "ho va ten", "tuoi", "gioi tinh", "ngay sinh", "Dia chi", "phone", "email");
+        System.out.printf("%-5s | %-19s | %-5s | %-9s | %-12s | %-21s | %-12s | %-21s | \n","id", "ho va ten", "tuoi", "gioi tinh", "ngay sinh", "Dia chi", "phone", "email");
         for (Patient patient : this.patientsList) {
             patient.displayInfo();
         }

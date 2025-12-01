@@ -4,7 +4,7 @@ import logic.PatientLogic;
 import utilities.CSVEntity;
 
 public class Patient extends Person implements CSVEntity {
-    public static int auto_id;
+    private static  int auto_id;
     private int Id;
 
     public Patient() {
@@ -56,8 +56,7 @@ public class Patient extends Person implements CSVEntity {
     }
     @Override
     public void displayInfo(){
-
-        System.out.printf("%-5s | %-19s | %-5s | %-9s | %-10s | %-21s | %-10s | %-21s | \n", this.Id, this.name, this.age, this.gender, this.birthday, this.address, this.phone, this.email);
+        System.out.printf("%-5s | %-19s | %-5s | %-9s | %-12s | %-21s | %-12s | %-21s | \n", this.Id, this.name, this.age, this.gender, this.birthday, this.address, this.phone, this.email);
     }
 
     @Override

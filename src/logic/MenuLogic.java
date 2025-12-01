@@ -1,6 +1,8 @@
 package logic;
 
+import entity.Doctor;
 import entity.Patient;
+import entity.Sick;
 import utilities.CSVUtils;
 import utilities.DataUtil;
 
@@ -10,11 +12,18 @@ import java.util.Scanner;
 
 public class MenuLogic {
     private  PatientLogic patientLogic;
-    private final DoctorLogic doctorLogic = new DoctorLogic();
+    private  DoctorLogic doctorLogic;
+    private  SickLogic sickLogic;
 
     public void runData() {
         List<Patient> patients = CSVUtils.getInstance().readDataFromFile(PatientLogic.PATIENTS_FILE, line -> new Patient((String) line));
         this.patientLogic = PatientLogic.getInstance(patients);
+
+        List<Doctor> doctors = CSVUtils.getInstance().readDataFromFile(DoctorLogic.DOCTORS_FILE, line -> new Doctor((String)line));
+        this.doctorLogic = DoctorLogic.getInstance(doctors);
+
+        List<Sick> sicks =CSVUtils.getInstance().readDataFromFile(SickLogic.SICK_FILE, line -> new Sick((String)line));
+        this.sickLogic = SickLogic.getInstance(sicks);
     }
 
     public void run() {
@@ -26,6 +35,8 @@ public class MenuLogic {
                 case 2 -> patientLogic.showPatinet();
                 case 3 -> doctorLogic.inputDoctor();
                 case 4 -> doctorLogic.showDoctor();
+                case 5 -> sickLogic.inptutSick();
+                case 6 -> sickLogic.showSick();
             }
         }
     }
@@ -35,7 +46,7 @@ public class MenuLogic {
         int choofuntion;
         do {
             choofuntion = new Scanner(System.in).nextInt();
-            if (choofuntion > 0 && choofuntion < 3) {
+            if (choofuntion > 0 && choofuntion < 7) {
                 break;
             }
             System.out.println("Không có chức năng, vui lòng chọn lại: ");
